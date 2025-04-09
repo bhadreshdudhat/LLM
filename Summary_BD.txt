@@ -1,0 +1,72 @@
+ This week, we'll explore frontier models like the GPT-4001 preview and Claude 3.5, along with other pioneering closed-source models that achieve remarkable results. We'll interact with these models through web interfaces like ChatGPT and APIs, and we'll kick off a commercial project that will be both useful and an engaging exercise. 
+
+Next week, we'll enhance our project by adding a user interface using Gradio, a platform I highly recommend for its ease of use, especially for those of us who struggle with front-end development. We'll create a classic AI assistant chatbot that is multimodal, incorporating audio and images, and capable of using tools to execute code on your computer. This approach may sound a bit unconventional, but it will all come together as we progress.
+
+ run a open source large language model directly on your box using a platform called llama,which lets you run C plus plus code version of Llms compiled directly on your machine.
+ Download Ollama for windows
+ In poewershell - ollama run llama3.2
+ Ollama serve
+ (It has to download the 2 billion parameters associated with llama)
+ Find more different LL models at https://ollama.com/search
+ Experimenting with different models and and finding the one that works best for your problem. That is a critical skill for an LLM engineer.
+ -------------
+ 
+-- using Anaconda
+Udemy\Projects>git clone https://github.com/ed-donner/llm_engineering
+(base)llm Eng> conda env create -f environment.yml
+(base)llm Eng> conda activate llms
+(llm)llm Eng> python --version
+(llm)llm Eng> jupyter lab
+
+jupyter nbconvert --to python notebook.ipynb
+
+-- using virtual environment
+--create virtual environment
+(base) llm_engineering> python -m venv venv
+-- activate virtual environment
+(base) llm_engineering> .\venv\Scripts\activate
+-- install requirements in virtual environment - venv
+(venv) (base) llm_engineering> pip install -r requirements.txt
+(venv) (base) llm_engineering>jupyter lab
+-------------------
+
+Close sourse providers
+web tools, the front end tools, which you can use to chat with like famously ChatGPT.
+But this is entirely separate to the API world. You can call out to the model directly using code, and it's running on the cloud, and it will respond with answers to your questions. you do have to pay per API request(its very tiny amount).
+Create OpenAI API key
+---------------
+
+Building your own little web browser, which is like a summarizing web browser.
+It's like a Reader's Digest web browser.
+Beautifulsoup - It's a fabulous little package that's used for parsing web pages and use Beautifulsoup to do things like pluck out the title of a web page and get rid of things like scripts and style and images and inputs from a web page and then figure out its text.
+ soup = BeautifulSoup(response.content, 'html.parser')
+        self.title = soup.title.string if soup.title else "No title found"
+        for irrelevant in soup.body(["script", "style", "img", "input"]):
+            irrelevant.decompose()
+-------------------------
+
+Models like GPT4o have been trained to receive instructions in a particular way.
+They expect to receive:
+A system prompt that tells them what task they are performing and what tone they should use (Context)
+A user prompt -- the conversation starter that they should reply to
+The API from OpenAI expects to receive messages in a particular structure. Many of the other APIs share this structure:
+[
+    {"role": "system", "content": "system message goes here"},
+    {"role": "user", "content": "user message goes here"}
+]
+messages = [
+    {"role": "system", "content": "You are a snarky assistant"},
+    {"role": "user", "content": "What is 2 + 2?"}
+]
+response = openai.chat.completions.create(model="gpt-4o-mini", messages=messages)
+print(response.choices[0].message.content)
+
+===>Oh, it's a real brain buster! But I'm pretty sure the answer is 101. You know, just your average day in math land.
+
+==========================
+frontier models : the largest possible models, closed source models, the paid models, biggest, strongest open source models as well. So depending on the context, it could mean either thing.
+libraries like Lang Chain : which give you a kind of abstraction layer, and you can use Lang chain and then within it you can call the different APIs. And it presents you with one API that is unified across them.
+3 ways to use Model => chat interfaces (ChatGPT)
+Cloud APIs : Ai Clous Service : Azure ML
+Direct inference : Ollama run locally
+
