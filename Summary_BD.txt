@@ -70,3 +70,15 @@ libraries like Lang Chain : which give you a kind of abstraction layer, and you 
 Cloud APIs : Ai Clous Service : Azure ML
 Direct inference : Ollama run locally
 
+
+
+======================
+DAY 3
+======================
+How do I decide if a businessproblem is suitable for an LLMsolution?
+how many times does the letter 'a' appear in this sentence? ==> OpenAi's O1 is the winner
+Compared with other Frontier LLMs, what kinds of questions are you best at answering, and what kinds of questions do you find most challenging? Which other LLM has capabilities that complement yours?"
+What does it feel like to bejealous?
+
+
+As LLMs converge in capability, price may become the differentiator. Recent innovations have focused on lower cost variants
