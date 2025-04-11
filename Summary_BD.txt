@@ -105,3 +105,9 @@ o/p
 1 --------- 11
 2 --------- 22
 
+--------------
+Rag is about finding extra information that's relevant to the prompt, and adding it in to the context of the message that gets sent to the LM. Rag does that in a much more sophisticated and intelligent
+--------------
+"When the LLM replies to us, it can either just respond with a prompt or it can respond with something like, hey, if I'm going to to to generate you a response, first I'm going to need to ask you to run that tool you told me about and run it with these inputs and then provide me back with the outputs. And then you take that, you run the tool and then you provide the responses back to the LLM, and it then uses it to generate its response. So if you follow my drift there, it's not actually particularly amazing. It's that you call an LLM and it responds and says, hey, I need you to call the tool that you told me you have. You do that, you provide it back to the LLM, and then it's able to give you richer responses. And if you're really following along, you'll realize that that's not massively different to the kind of thing we did in the last lab when we just looked for a string and we just inserted extra context in the prompt that goes to the LLM, it's just about really inserting extra context in prompts."
+------------
+TOOLS : With tools, you can write a function, and have the LLM call that function as part of its response.
