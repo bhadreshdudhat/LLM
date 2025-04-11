@@ -82,3 +82,26 @@ What does it feel like to bejealous?
 
 
 As LLMs converge in capability, price may become the differentiator. Recent innovations have focused on lower cost variants
+
+Single and multi shot prompting : 
+By including more examples in the prompt, you improve the quality and reliability of the call to the LLM, strengthen its ability to predict the next tokens, and ultimately add greater robustness to the model's output.
+
+
+===============================================
+Week 2 
+===============================================
+Day1 
+for chat
+[
+    {"role": "system", "content": "system message here"},
+    {"role": "user", "content": "first user prompt here"},
+    {"role": "assistant", "content": "the assistant's response"},
+    {"role": "user", "content": "the new user prompt"},
+]
+
+ for g, c in zip([1,2],[11,22,33]):
+    print(g,"---------",c)
+o/p
+1 --------- 11
+2 --------- 22
+
