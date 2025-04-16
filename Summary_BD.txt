@@ -111,3 +111,20 @@ Rag is about finding extra information that's relevant to the prompt, and adding
 "When the LLM replies to us, it can either just respond with a prompt or it can respond with something like, hey, if I'm going to to to generate you a response, first I'm going to need to ask you to run that tool you told me about and run it with these inputs and then provide me back with the outputs. And then you take that, you run the tool and then you provide the responses back to the LLM, and it then uses it to generate its response. So if you follow my drift there, it's not actually particularly amazing. It's that you call an LLM and it responds and says, hey, I need you to call the tool that you told me you have. You do that, you provide it back to the LLM, and then it's able to give you richer responses. And if you're really following along, you'll realize that that's not massively different to the kind of thing we did in the last lab when we just looked for a string and we just inserted extra context in the prompt that goes to the LLM, it's just about really inserting extra context in prompts."
 ------------
 TOOLS : With tools, you can write a function, and have the LLM call that function as part of its response.
+
+
+
+=====================
+Week 3
+=====================
+
+
+💡 LLM tip 💡
+Don't waste your used context! While building software with LLMs, I've found a practical way to maximize the value of that context window. Before ending a session, sometimes I'll prompt the model to "translate" used context into a diagram.
+
+For example, after populating implementation details for a standard AWS Cognito authentication flow, I asked the LLM to generate a diagram capturing the entire process. The resulting Mermaid diagram documented everything clearly (sign-up verification, JWT handling, API requests, token refresh, etc...).
+This final "translation" prompt creates documentation from what would otherwise be lost context.
+
+While most focus on using LLMs for code generation, their ability to synthesize complex discussions into clear architectural diagrams might be one of their most underutilized capabilities.
+
+'Based on our discussion, create a [diagram type] showing [specific elements]'
